@@ -21,7 +21,7 @@ QString LoginUser::hash(QString strParam){
 }
 
 void LoginUser::Init(mainForm *w){
-    db = ConnectDB(g_hostname, g_dataBase, g_login, g_password, g_driverName,g_connect_port);
+    ConnectDB(g_hostname, g_dataBase, g_login, g_password, g_driverName,g_connect_port);
     QSqlQuery sql;
     sql.prepare("SELECT UserName, RealUserName "
                 "FROM sys_users");

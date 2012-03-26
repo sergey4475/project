@@ -3,7 +3,7 @@ QDialog{
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #EEEEEA, stop: 1 #FFFFFF);
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 5px;
     /*padding-top:20px;
     margin-top: 1ex;*/ /* leave space at the top for the title */
 }
@@ -18,7 +18,7 @@ QTabBar::tab {
     border-bottom-color: #C2C7CB; /* same as the pane color */
     min-width:100px;
     padding: 5px;
-        border-radius: 10px;
+        border-radius: 5px;
 }
 
 QTabBar::tab:selected, QTabBar::tab:hover {
@@ -44,6 +44,19 @@ QTabBar{
 
 }
 
+/* QToolBox */
+QToolBox::tab {
+    background-color: qlineargradient(spread:pad, x1:0.448727, y1:0.102, x2:0.466, y2:0.960455, stop:0 rgba(155, 155, 155, 255), stop:1 rgba(232, 232, 230, 255));
+    border: 1px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-radius: 5px;
+}
+
+QToolBox::tab:selected { /* italicize selected tabs */
+    font: italic bold;
+    color: #000;
+}
+
 
 /* QCheckBox*/
 QCheckBox::indicator:unchecked {
@@ -62,8 +75,8 @@ QCheckBox{
 
 /*QComboBox*/
 QComboBox {
-    border: 2px solid gray;
-    border-radius: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
     padding: 1px 18px 1px 3px;
     min-width: 5em;
 }
@@ -117,15 +130,15 @@ QGroupBox {
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #EEEEEA, stop: 1 #FFFFFF);
     border: 1px solid gray;
-    border-radius: 10px;
-    padding-top:20px;
-    margin-top: 1ex; /* leave space at the top for the title */
+    border-radius: 6px;
+    padding-top:15px;
+    margin-top: 3ex; /* leave space at the top for the title */
 }
 
 QGroupBox::title {
     subcontrol-origin: margin;
     subcontrol-position: top left; /* position at the top center */
-    padding:5px;
+    padding:2px;
     left: 25px;
     min-width: 150px;
     border: 1px solid gray;
@@ -141,13 +154,13 @@ QGroupBox::indicator {
 /*QListView*/
 QListView{
         border: 0px solid gray;
-        border-radius:10px;
+        border-radius:5px;
 }
 
 /*QTableView*/
 QTableView{
         border: 0px solid gray;
-        border-radius:10px;
+        border-radius:5px;
 }
 
 /*QPushButton*/
@@ -175,8 +188,8 @@ QLineEdit{
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                 stop: 0 #f8f8f8, stop: 0.4 #f8f8f8,
                 stop: 0.5 #DaDaDa, stop: 1.0 #D5D5D5);
-    border: 2px solid gray;
-    border-radius: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 

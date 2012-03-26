@@ -3,7 +3,7 @@
 
 #include "params.h"
 
-QSqlDatabase ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QString g_password, QString DriverBD,int g_connect_port);
+void ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QString g_password, QString DriverBD,int g_connect_port);
 
 
 #endif // GLOBAL_MODULE_H
