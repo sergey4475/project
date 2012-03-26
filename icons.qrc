@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>icons/Disable16.png</file>
+        <file>icons/Disable24.png</file>
+        <file>icons/Enable Convex16.png</file>
+        <file>icons/Enable Convex24.png</file>
+        <file>icons/ComboDown.ico</file>
+        <file>icons/ComboUp.ico</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>styles/default.qss</file>
+    </qresource>
+</RCC>
