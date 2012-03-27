@@ -31,15 +31,16 @@ void arm_admin::init(){
 
 void arm_admin::init_tab(){
     //Вкладка администрирование
-    if (ui->tab_settings->isEnabled()){
+
+    if (ui->Tab->currentIndex()==6){
         ui->DriversDB->clear();
-        QSqlDatabase db;
-        int count = db.drivers().count();
+        QSqlDatabase db_;
+        int count = db_.drivers().count();
 
         for (int i=0;i<count;++i){
-            ui->DriversDB->addItem(db.drivers().value(i));
+            ui->DriversDB->addItem(db_.drivers().value(i));
         }
-        db.~QSqlDatabase();
+        db_.~QSqlDatabase();
 
         ui->hostname->setText(g_hostname);
         ui->NameDataBase->setText(g_dataBase);
@@ -58,19 +59,20 @@ void arm_admin::on_Tab_currentChanged(int index)
 
 void arm_admin::on_testBUt_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase(ui->DriversDB->currentText());
-    db.close();
-    db.setHostName(ui->hostname->text());
-    db.setDatabaseName(ui->NameDataBase->text());
-    db.setUserName(ui->loginDB->text());
-    db.setPassword(ui->passwordDB->text());
-    if (! db.open()){
+    QSqlDatabase db_ = QSqlDatabase::addDatabase(ui->DriversDB->currentText());
+    db_.close();
+    db_.setHostName(ui->hostname->text());
+    db_.setDatabaseName(ui->NameDataBase->text());
+    db_.setUserName(ui->loginDB->text());
+    db_.setPassword(ui->passwordDB->text());
+    if (! db_.open()){
          QMessageBox::critical(0,"Ошибка подключения",db.lastError().text(),QMessageBox::Ok);
-         db.close();
+         db_.close();
     }else{
         QMessageBox::warning(0,"Подключени прошло успешно","Подключение успешно!!!",QMessageBox::Ok);
-        db.close();
+        db_.close();
     }
+    db_.~QSqlDatabase();
 }
 
 void arm_admin::on_save_button_clicked()

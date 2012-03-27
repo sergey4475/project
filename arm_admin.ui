@@ -235,344 +235,279 @@
       <attribute name="title">
        <string>Администрирование</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0">
-        <widget class="QToolBox" name="toolBox">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <property name="tabSpacing">
-          <number>1</number>
-         </property>
-         <widget class="QWidget" name="page">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>677</width>
-            <height>528</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Основные настройки</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <item>
-              <widget class="QGroupBox" name="groupBox_4">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>189</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>341</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="title">
-                <string>База данных</string>
-               </property>
-               <widget class="QLabel" name="label">
-                <property name="geometry">
-                 <rect>
-                  <x>188</x>
-                  <y>29</y>
-                  <width>41</width>
-                  <height>16</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Sunken</enum>
-                </property>
-                <property name="lineWidth">
-                 <number>0</number>
-                </property>
-                <property name="text">
-                 <string>СУБД:</string>
-                </property>
-                <property name="textFormat">
-                 <enum>Qt::AutoText</enum>
-                </property>
-                <property name="buddy">
-                 <cstring>DriversDB</cstring>
-                </property>
-               </widget>
-               <widget class="QComboBox" name="DriversDB">
-                <property name="geometry">
-                 <rect>
-                  <x>232</x>
-                  <y>28</y>
-                  <width>89</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_2">
-                <property name="geometry">
-                 <rect>
-                  <x>6</x>
-                  <y>29</y>
-                  <width>85</width>
-                  <height>16</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Sunken</enum>
-                </property>
-                <property name="lineWidth">
-                 <number>0</number>
-                </property>
-                <property name="text">
-                 <string>База данных:</string>
-                </property>
-                <property name="textFormat">
-                 <enum>Qt::AutoText</enum>
-                </property>
-               </widget>
-               <widget class="QLineEdit" name="loginDB">
-                <property name="geometry">
-                 <rect>
-                  <x>88</x>
-                  <y>88</y>
-                  <width>113</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-               </widget>
-               <widget class="QLineEdit" name="passwordDB">
-                <property name="geometry">
-                 <rect>
-                  <x>88</x>
-                  <y>112</y>
-                  <width>113</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="echoMode">
-                 <enum>QLineEdit::Normal</enum>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_3">
-                <property name="geometry">
-                 <rect>
-                  <x>6</x>
-                  <y>92</y>
-                  <width>77</width>
-                  <height>16</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Логин:</string>
-                </property>
-                <property name="buddy">
-                 <cstring>loginDB</cstring>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_4">
-                <property name="geometry">
-                 <rect>
-                  <x>6</x>
-                  <y>116</y>
-                  <width>77</width>
-                  <height>16</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Пароль:</string>
-                </property>
-                <property name="buddy">
-                 <cstring>passwordDB</cstring>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="testBUt">
-                <property name="geometry">
-                 <rect>
-                  <x>8</x>
-                  <y>144</y>
-                  <width>109</width>
-                  <height>37</height>
-                 </rect>
-                </property>
-                <property name="text">
-                 <string>Проверка...</string>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_5">
-                <property name="geometry">
-                 <rect>
-                  <x>6</x>
-                  <y>66</y>
-                  <width>85</width>
-                  <height>16</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Имя сервера:</string>
-                </property>
-                <property name="buddy">
-                 <cstring>hostname</cstring>
-                </property>
-               </widget>
-               <widget class="QLineEdit" name="hostname">
-                <property name="geometry">
-                 <rect>
-                  <x>88</x>
-                  <y>64</y>
-                  <width>113</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_6">
-                <property name="geometry">
-                 <rect>
-                  <x>204</x>
-                  <y>64</y>
-                  <width>85</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Номер порта:</string>
-                </property>
-                <property name="buddy">
-                 <cstring>hostname</cstring>
-                </property>
-               </widget>
-               <widget class="QLineEdit" name="Port">
-                <property name="geometry">
-                 <rect>
-                  <x>284</x>
-                  <y>64</y>
-                  <width>51</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-               </widget>
-               <widget class="QLineEdit" name="NameDataBase">
-                <property name="geometry">
-                 <rect>
-                  <x>88</x>
-                  <y>28</y>
-                  <width>97</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>322</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item row="1" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>542</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="save_button">
-               <property name="minimumSize">
-                <size>
-                 <width>117</width>
-                 <height>37</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Сохранить...</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="page_2">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>100</width>
-            <height>30</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Page 2</string>
-          </attribute>
-         </widget>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>16</y>
+         <width>341</width>
+         <height>189</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>341</width>
+         <height>189</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>341</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>База данных</string>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>188</x>
+          <y>29</y>
+          <width>41</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="text">
+         <string>СУБД:</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="buddy">
+         <cstring>DriversDB</cstring>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="DriversDB">
+        <property name="geometry">
+         <rect>
+          <x>232</x>
+          <y>28</y>
+          <width>89</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>29</y>
+          <width>85</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="text">
+         <string>База данных:</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="loginDB">
+        <property name="geometry">
+         <rect>
+          <x>88</x>
+          <y>88</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="passwordDB">
+        <property name="geometry">
+         <rect>
+          <x>88</x>
+          <y>112</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>92</y>
+          <width>77</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Логин:</string>
+        </property>
+        <property name="buddy">
+         <cstring>loginDB</cstring>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>116</y>
+          <width>77</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Пароль:</string>
+        </property>
+        <property name="buddy">
+         <cstring>passwordDB</cstring>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="testBUt">
+        <property name="geometry">
+         <rect>
+          <x>8</x>
+          <y>144</y>
+          <width>109</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Проверка...</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>66</y>
+          <width>85</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Имя сервера:</string>
+        </property>
+        <property name="buddy">
+         <cstring>hostname</cstring>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="hostname">
+        <property name="geometry">
+         <rect>
+          <x>88</x>
+          <y>64</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>204</x>
+          <y>64</y>
+          <width>85</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Номер порта:</string>
+        </property>
+        <property name="buddy">
+         <cstring>hostname</cstring>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="Port">
+        <property name="geometry">
+         <rect>
+          <x>284</x>
+          <y>64</y>
+          <width>51</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="NameDataBase">
+        <property name="geometry">
+         <rect>
+          <x>88</x>
+          <y>28</y>
+          <width>97</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="save_button">
+       <property name="geometry">
+        <rect>
+         <x>576</x>
+         <y>548</y>
+         <width>117</width>
+         <height>37</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>117</width>
+         <height>37</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Сохранить...</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>
