@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     arm_admin.cpp \
     loginuser.cpp \
     global_module.cpp \
-    table_models.cpp
+    table_models.cpp \
+    frmuser.cpp
 
 HEADERS  += mainform.h \
     frmlistspr.h \
@@ -26,12 +27,14 @@ HEADERS  += mainform.h \
     params.h \
     loginuser.h \
     global_module.h \
-    table_models.h
+    table_models.h \
+    frmuser.h
 
 FORMS    += mainform.ui \
     frmlistspr.ui \
     arm_admin.ui \
-    loginuser.ui
+    loginuser.ui \
+    frmuser.ui
 
 DESTDIR = ../bin
 

@@ -27,6 +27,10 @@ private slots:
 
     void on_save_button_clicked();
 
+    void on_add_user_clicked();
+
+    void on_save_user();
+
 private:
     Ui::arm_admin *ui;
 };

@@ -108,3 +108,44 @@ void arm_admin::on_save_button_clicked()
 
     ConnectDB(g_hostname, g_dataBase, g_login, g_password, g_driverName,g_connect_port);
 }
+
+void arm_admin::on_add_user_clicked()
+{
+
+    QGridLayout *Layout = new QGridLayout;
+    QWidget *widget = new QWidget;
+    widget->setWindowTitle("Добавление нового пользователя");
+    widget->setMaximumHeight(50);
+    widget->setMaximumWidth(200);
+
+    QPushButton *OkButton = new QPushButton;
+    OkButton->setText("Применить");
+    connect(OkButton,SIGNAL(clicked()),this,SLOT(on_save_user()));
+
+    QLabel *UserLabel = new QLabel("Имя пользователя:");
+    QLineEdit *UserName = new QLineEdit;
+    QLabel *RealLabel = new QLabel("Полное имя:");
+    QLineEdit *RealUserName = new QLineEdit;
+    QLabel *Password = new QLabel("Пароль:");
+    QLineEdit *UserPassword = new QLineEdit;
+    UserPassword->setEchoMode(QLineEdit::Password);
+
+    Layout->addWidget(UserLabel);
+    Layout->addWidget(UserName);
+
+    Layout->addWidget(RealLabel);
+    Layout->addWidget(RealUserName);
+
+    Layout->addWidget(Password);
+    Layout->addWidget(UserPassword);
+
+    Layout->addWidget(OkButton);
+    Layout->setAlignment(OkButton,Qt::AlignLeft);
+
+    widget->setLayout(Layout);
+    widget->show();
+}
+
+void arm_admin::on_save_user(){
+    qDebug() << 11;
+}
