@@ -18,7 +18,7 @@ QTabBar::tab {
     border-bottom-color: #C2C7CB; /* same as the pane color */
     min-width:100px;
     padding: 5px;
-        border-radius: 5px;
+    border-radius: 5px;
 }
 
 QTabBar::tab:selected, QTabBar::tab:hover {
@@ -29,7 +29,7 @@ background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
 
 QTabBar::tab:selected {
     border-color: #9B9B9B;
-        border-bottom-color: #C2C7CB; /* same as pane color */
+    border-bottom-color: #C2C7CB; /* same as pane color */
 }
 
 QTabBar::tab:!selected {
@@ -41,8 +41,24 @@ QTabBar{
      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                   stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
                                   stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-
 }
+
+QTabBar QTabBar{
+     border-radius: 0px;
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+QTabBar QTabBar::tab {
+    background-color: #C4C4C3;
+    border: 1px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-radius: 0px;
+}
+
+
+
 
 /* QToolBox */
 QToolBox::tab {
@@ -159,7 +175,7 @@ QListView{
 
 /*QTableView*/
 QTableView{
-        border: 0px solid gray;
+        border: 1px solid gray;
         border-radius:5px;
 }
 

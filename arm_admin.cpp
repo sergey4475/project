@@ -1,5 +1,6 @@
 #include "arm_admin.h"
 #include "ui_arm_admin.h"
+#include "table_models.h"
 
 #define t_GENERAL 0
 #define t_CLIENTS 1
@@ -48,6 +49,19 @@ void arm_admin::init_tab(){
         ui->passwordDB->setText(g_password);
         ui->Port->setText(QString("%1").arg(g_connect_port));
         ui->DriversDB->setCurrentIndex(ui->DriversDB->findText(g_driverName));
+
+        QSqlQuery query;
+        query.exec("SELECT UserName, RealUserName, Blocked, Deleted "
+                   " FROM sys_users");
+        userTable *userTab = new userTable;
+        userTab->setQuery(query);
+        userTab->setHeaderData(0,Qt::Horizontal,QObject::tr("Имя пользователя"));
+        userTab->setHeaderData(1,Qt::Horizontal,QObject::tr("Полное имя"));
+        ui->table_users->setModel(userTab);
+        ui->table_users->hideColumn(2);
+        ui->table_users->hideColumn(3);
+
+        ui->table_users->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
     }
 }
 

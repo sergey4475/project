@@ -17,14 +17,16 @@ SOURCES += main.cpp\
     frmlistspr.cpp \
     arm_admin.cpp \
     loginuser.cpp \
-    global_module.cpp
+    global_module.cpp \
+    table_models.cpp
 
 HEADERS  += mainform.h \
     frmlistspr.h \
     arm_admin.h \
     params.h \
     loginuser.h \
-    global_module.h
+    global_module.h \
+    table_models.h
 
 FORMS    += mainform.ui \
     frmlistspr.ui \
