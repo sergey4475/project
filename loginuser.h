@@ -18,7 +18,6 @@ public:
     explicit LoginUser(QWidget *parent = 0);
     bool Login();
     void Init(mainForm *w);
-    QString hash(QString strParam);
     ~LoginUser();
     
 private slots:

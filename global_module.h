@@ -5,5 +5,6 @@
 
 void ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QString g_password, QString DriverBD,int g_connect_port);
 
+QString hash(QString strParam);
 
 #endif // GLOBAL_MODULE_H

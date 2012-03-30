@@ -14,12 +14,6 @@ LoginUser::~LoginUser()
     delete ui;
 }
 
-QString LoginUser::hash(QString strParam){
-    QCryptographicHash hash(QCryptographicHash::Sha1);
-    hash.addData(strParam.toAscii());
-    return (hash.result().toHex());
-}
-
 void LoginUser::Init(mainForm *w){
     ConnectDB(g_hostname, g_dataBase, g_login, g_password, g_driverName,g_connect_port);
     QSqlQuery sql;

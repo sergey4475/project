@@ -1,6 +1,9 @@
 #ifndef PARAMS_H
 #define PARAMS_H
 
+#define USER_ADD 0
+#define USER_EDIT 1
+
 #include <QtCore>
 #include <QtSql>
 #include <QMessageBox>

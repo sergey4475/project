@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QtSql>
 #include "params.h"
+#include "frmuser.h"
 #include "global_module.h"
 
 namespace Ui {
@@ -30,6 +31,10 @@ private slots:
     void on_add_user_clicked();
 
     void on_save_user();
+
+    void on_edit_user_clicked();
+
+    void on_table_users_activated(const QModelIndex &index);
 
 private:
     Ui::arm_admin *ui;

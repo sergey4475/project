@@ -14,3 +14,10 @@ void ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QSt
     }
 //   return db;
 }
+
+QString hash(QString strParam){
+    QCryptographicHash hash(QCryptographicHash::Sha1);
+    hash.addData(strParam.toAscii());
+    return (hash.result().toHex());
+}
+

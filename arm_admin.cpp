@@ -51,15 +51,15 @@ void arm_admin::init_tab(){
         ui->DriversDB->setCurrentIndex(ui->DriversDB->findText(g_driverName));
 
         QSqlQuery query;
-        query.exec("SELECT UserName, RealUserName, Blocked, Deleted "
+        query.exec("SELECT ID, UserName, RealUserName, Blocked, Deleted "
                    " FROM sys_users");
         userTable *userTab = new userTable;
         userTab->setQuery(query);
-        userTab->setHeaderData(0,Qt::Horizontal,QObject::tr("Имя пользователя"));
-        userTab->setHeaderData(1,Qt::Horizontal,QObject::tr("Полное имя"));
+        userTab->setHeaderData(1,Qt::Horizontal,QObject::tr("Имя пользователя"));
+        userTab->setHeaderData(2,Qt::Horizontal,QObject::tr("Полное имя"));
         ui->table_users->setModel(userTab);
-        ui->table_users->hideColumn(2);
         ui->table_users->hideColumn(3);
+        ui->table_users->hideColumn(4);
 
         ui->table_users->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
     }
@@ -111,41 +111,32 @@ void arm_admin::on_save_button_clicked()
 
 void arm_admin::on_add_user_clicked()
 {
-
-    QGridLayout *Layout = new QGridLayout;
-    QWidget *widget = new QWidget;
-    widget->setWindowTitle("Добавление нового пользователя");
-    widget->setMaximumHeight(50);
-    widget->setMaximumWidth(200);
-
-    QPushButton *OkButton = new QPushButton;
-    OkButton->setText("Применить");
-    connect(OkButton,SIGNAL(clicked()),this,SLOT(on_save_user()));
-
-    QLabel *UserLabel = new QLabel("Имя пользователя:");
-    QLineEdit *UserName = new QLineEdit;
-    QLabel *RealLabel = new QLabel("Полное имя:");
-    QLineEdit *RealUserName = new QLineEdit;
-    QLabel *Password = new QLabel("Пароль:");
-    QLineEdit *UserPassword = new QLineEdit;
-    UserPassword->setEchoMode(QLineEdit::Password);
-
-    Layout->addWidget(UserLabel);
-    Layout->addWidget(UserName);
-
-    Layout->addWidget(RealLabel);
-    Layout->addWidget(RealUserName);
-
-    Layout->addWidget(Password);
-    Layout->addWidget(UserPassword);
-
-    Layout->addWidget(OkButton);
-    Layout->setAlignment(OkButton,Qt::AlignLeft);
-
-    widget->setLayout(Layout);
-    widget->show();
+    frmUser *fUsers = new frmUser;
+    fUsers->Init(USER_ADD,0);
+    fUsers->show();
 }
 
 void arm_admin::on_save_user(){
     qDebug() << 11;
+}
+
+void arm_admin::on_edit_user_clicked()
+{
+    QModelIndex ID = ui->table_users->model()->index(ui->table_users->currentIndex().row(),0);
+    int IDClients = ID.data().toInt();
+
+    frmUser *fUsers = new frmUser;
+    fUsers->Init(USER_EDIT,IDClients);
+    fUsers->show();
+
+}
+
+void arm_admin::on_table_users_activated(const QModelIndex &index)
+{
+    QModelIndex ID = ui->table_users->model()->index(index.row(),0);
+    int IDClients = ID.data().toInt();
+
+    frmUser *fUsers = new frmUser;
+    fUsers->Init(USER_EDIT,IDClients);
+    fUsers->show();
 }
