@@ -4,8 +4,6 @@
 #
 #-------------------------------------------------
 
-INCLUDEPATH += "../widgets/ToolBar" \
-
 QT       += core gui sql
 
 TARGET = mdi
