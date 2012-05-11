@@ -36,12 +36,6 @@ private slots:
 
     void on_table_users_activated(const QModelIndex &index);
 
-    void on_animToolBox_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
-
 private:
     Ui::arm_admin *ui;
 };

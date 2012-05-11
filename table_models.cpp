@@ -1,7 +1,6 @@
 #include "table_models.h"
 
-QVariant userTable::data(const QModelIndex &index, int role) const {
-    // Чередование цвета строк
+QVariant defTable::data(const QModelIndex &index, int role) const{
     if(role == Qt::BackgroundColorRole) {
         if(index.row() %2){
             return QVariant(QColor(200,220,255));
@@ -9,6 +8,12 @@ QVariant userTable::data(const QModelIndex &index, int role) const {
             return QVariant(QColor(255,255,255));
         }
     }
+
+    return QSqlQueryModel::data(index, role);
+}
+
+QVariant userTable::data(const QModelIndex &index, int role) const {
+    // Чередование цвета строк
     if(role == Qt::DecorationRole){
       int Blocked = record(index.row()).value("Blocked").toBool();
       int Deleted = record(index.row()).value("Deleted").toBool();

@@ -35,8 +35,14 @@ void arm_admin::init(){
 }
 
 void arm_admin::init_tab(){
-    //Вкладка администрирование
+    if (ui->Tab->currentIndex()==1){
+        QSqlQuery query;
+        query.exec("SELECT worker.ID, FName, IName, OName, IsAdministrator, qualification.name, worker.Deleted "
+                   "FROM worker LEFT JOIN qualification ON worker.IDqualification = qualification.id");
 
+    }
+
+    //Вкладка администрирование
     if (ui->Tab->currentIndex()==6){
         ui->DriversDB->clear();
         QSqlDatabase db_;
@@ -143,51 +149,4 @@ void arm_admin::on_table_users_activated(const QModelIndex &index)
     frmUser *fUsers = new frmUser;
     fUsers->Init(USER_EDIT,IDClients);
     fUsers->show();
-}
-
-void arm_admin::on_animToolBox_clicked()
-{
-    ui->menuToolBox->setVisible(!ui->menuToolBox->isVisible());
-
-//    QEasingCurve effect = QEasingCurve::OutElastic;
-//    if (ui->menuToolBox->width()<=1){
-//        QPropertyAnimation *anim = new QPropertyAnimation(ui->menuToolBox, "geometry");
-//        anim->setDuration(1000);
-//        anim->setEasingCurve(effect);
-//        anim->setStartValue(QRect(0,0,1,this->height()));
-//        anim->setEndValue(QRect(0,0,153,this->height()));
-//        anim->start(QAbstractAnimation::DeleteWhenStopped);
-//        ui->menuToolBox->setGeometry(0,0,153,this->height());
-
-//        QPropertyAnimation *anim2 = new QPropertyAnimation(ui->animToolBox, "geometry");
-//        anim2->setDuration(1000);
-//        anim2->setEasingCurve(effect);
-//        anim2->setStartValue(QRect(0,ui->animToolBox->geometry().top(),ui->animToolBox->width(),ui->animToolBox->height()));
-//        anim2->setEndValue(QRect(153,ui->animToolBox->geometry().top(),ui->animToolBox->width(),ui->animToolBox->height()));
-//        anim2->start(QAbstractAnimation::KeepWhenStopped);
-//    }else{
-//        QPropertyAnimation *anim = new QPropertyAnimation(ui->menuToolBox, "geometry");
-//        anim->setDuration(1000);
-//        anim->setEasingCurve(effect);
-//        anim->setStartValue(QRect(0,0,153,this->height()));
-//        anim->setEndValue(QRect(0,0,1,this->height()));
-//        anim->start(QAbstractAnimation::KeepWhenStopped);
-
-//        QPropertyAnimation *anim2 = new QPropertyAnimation(ui->animToolBox, "geometry");
-//        anim2->setDuration(1000);
-//        anim2->setEasingCurve(effect);
-//        anim2->setStartValue(QRect(300,ui->animToolBox->geometry().top(),ui->animToolBox->width(),ui->animToolBox->height()));
-//        anim2->setEndValue(QRect(0,ui->animToolBox->geometry().top(),ui->animToolBox->width(),ui->animToolBox->height()));
-//        anim2->start(QAbstractAnimation::KeepWhenStopped);
-//}
-}
-
-void arm_admin::on_pushButton_2_clicked()
-{
-    //ui->widget->setVisible(!ui->widget->isVisible());
-}
-
-void arm_admin::on_pushButton_clicked()
-{
-
 }

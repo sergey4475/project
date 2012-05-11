@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
-    <height>620</height>
+    <width>855</width>
+    <height>654</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -38,161 +38,7 @@
    <property name="spacing">
     <number>2</number>
    </property>
-   <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-     <property name="sizeConstraint">
-      <enum>QLayout::SetFixedSize</enum>
-     </property>
-     <item>
-      <widget class="QToolBox" name="menuToolBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>172</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="currentIndex">
-        <number>6</number>
-       </property>
-       <property name="tabSpacing">
-        <number>1</number>
-       </property>
-       <widget class="QWidget" name="tab_general">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Общее</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_clients">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Клиенты</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_personal">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Сотрудники</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_provider">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Поставщики</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_clients_history">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Обслуживание клиентов</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_reports">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Отчеты</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_admins">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>110</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Администрирование</string>
-        </attribute>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="2">
+   <item row="0" column="1">
     <widget class="QTabWidget" name="Tab">
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
@@ -204,10 +50,10 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>6</number>
      </property>
      <property name="usesScrollButtons">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="documentMode">
       <bool>false</bool>
@@ -217,10 +63,19 @@
        <string>Общее</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <property name="margin">
+       <property name="leftMargin">
         <number>2</number>
        </property>
-       <property name="spacing">
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing">
         <number>0</number>
        </property>
        <item row="0" column="0">
@@ -384,14 +239,131 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab_personal">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <attribute name="title">
+       <string>Сотрудники</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="group_worker">
+         <property name="maximumSize">
+          <size>
+           <width>217</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Сотрудники</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <property name="margin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="tableWidget"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="detal_worker">
+         <property name="minimumSize">
+          <size>
+           <width>573</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="groupButton_3">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <widget class="QWidget" name="layoutWidget_3">
+               <property name="geometry">
+                <rect>
+                 <x>4</x>
+                 <y>4</y>
+                 <width>72</width>
+                 <height>34</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_10">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QToolButton" name="toolButton_5">
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QToolButton" name="toolButton_6">
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QTableView" name="tWorker"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tab_clients">
       <attribute name="title">
        <string>Клиенты</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="tab_personal">
-      <attribute name="title">
-       <string>Сотрудники</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tab_provider">
@@ -738,7 +710,7 @@
            <property name="geometry">
             <rect>
              <x>12</x>
-             <y>40</y>
+             <y>48</y>
              <width>357</width>
              <height>133</height>
             </rect>
@@ -760,9 +732,9 @@
            <property name="geometry">
             <rect>
              <x>12</x>
-             <y>4</y>
+             <y>8</y>
              <width>357</width>
-             <height>33</height>
+             <height>37</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -875,28 +847,6 @@
        </item>
       </layout>
      </widget>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QToolButton" name="animToolBox">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>10</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>10</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>...</string>
-     </property>
     </widget>
    </item>
   </layout>

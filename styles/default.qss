@@ -148,7 +148,7 @@ QGroupBox {
     border: 1px solid gray;
     border-radius: 6px;
     padding-top:15px;
-    margin-top: 3ex; /* leave space at the top for the title */
+    margin-top: 3px; /* leave space at the top for the title */
 }
 
 QGroupBox::title {
@@ -165,6 +165,19 @@ QGroupBox::title {
 QGroupBox::indicator {
     width: 13px;
     height: 13px;
+}
+
+QGroupBox QToolButton{
+        min-width:25px;
+        min-height:25px;
+        max-width:25px;
+        max-height:25px;
+}
+
+QGroupBox#groupButton{
+   border-radius:0px;
+   margin:5px;
+   
 }
 
 /*QListView*/
@@ -206,17 +219,4 @@ QLineEdit{
                 stop: 0.5 #DaDaDa, stop: 1.0 #D5D5D5);
     border: 1px solid gray;
     border-radius: 5px;
-}
-
-
-
-QGroupBox QToolButton{
-        min-width:30px;
-        min-height:30px;
-        max-width:30px;
-        max-height:30px;
-}
-
-QGroupBox#groupButton{
-    border-radius:0px;
 }
