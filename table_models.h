@@ -3,11 +3,12 @@
 
 #include "global_module.h"
 
-class defTable : public QSqlQueryModel{
+class defModel : public QSqlQueryModel{
+public:
     QVariant data(const QModelIndex &index, int role) const;
 };
 
-class userTable : public defTable {
+class peopleTable : public defModel {
     QVariant data(const QModelIndex &index, int role) const;
 };
 

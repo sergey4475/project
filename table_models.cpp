@@ -1,9 +1,9 @@
 #include "table_models.h"
 
-QVariant defTable::data(const QModelIndex &index, int role) const{
+QVariant defModel::data(const QModelIndex &index, int role) const{
     if(role == Qt::BackgroundColorRole) {
         if(index.row() %2){
-            return QVariant(QColor(200,220,255));
+            return QVariant(QColor(230,230,250));
         }else{
             return QVariant(QColor(255,255,255));
         }
@@ -12,7 +12,7 @@ QVariant defTable::data(const QModelIndex &index, int role) const{
     return QSqlQueryModel::data(index, role);
 }
 
-QVariant userTable::data(const QModelIndex &index, int role) const {
+QVariant peopleTable::data(const QModelIndex &index, int role) const {
     // Чередование цвета строк
     if(role == Qt::DecorationRole){
       int Blocked = record(index.row()).value("Blocked").toBool();
@@ -29,7 +29,7 @@ QVariant userTable::data(const QModelIndex &index, int role) const {
         return image;
       }
 
-  return QSqlQueryModel::data(index, role);
+  return defModel::data(index, role);
 }
 
 
