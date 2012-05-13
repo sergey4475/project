@@ -11,7 +11,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainform.cpp \
+    mainform.cpp \
     frmlistspr.cpp \
     arm_admin.cpp \
     loginuser.cpp \
@@ -34,7 +34,7 @@ FORMS    += mainform.ui \
     loginuser.ui \
     frmuser.ui
 
-DESTDIR = ../bin
+#DESTDIR = ../bin
 
 RESOURCES += \
     icons.qrc

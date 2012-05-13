@@ -37,13 +37,10 @@ void arm_admin::init(){
 void arm_admin::init_tab(){
     if (ui->Tab->currentIndex()==1){
         QSqlQuery query;
-        query.exec("SELECT FName, IName, OName, IsAdministrator, qualification.name, worker.Deleted "
+        query.exec("SELECT FName, IName, OName, qualification.name, IsAdministrator, worker.Deleted "
                    "FROM worker LEFT JOIN qualification ON worker.IDqualification = qualification.id");
         peopleTable *sotrModel = new peopleTable;
         sotrModel->setQuery(query);
-        sotrModel->setHeaderData(0,Qt::Horizontal,QObject::tr("Фамилия"));
-        sotrModel->setHeaderData(1,Qt::Horizontal,QObject::tr("Имя"));
-        sotrModel->setHeaderData(2,Qt::Horizontal,QObject::tr("Отчество"));
         sotrModel->setHeaderData(4,Qt::Horizontal,QObject::tr("Квалификация"));
         ui->tWorker->setModel(sotrModel);
         ui->tWorker->hideColumn(3);

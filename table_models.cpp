@@ -32,4 +32,19 @@ QVariant peopleTable::data(const QModelIndex &index, int role) const {
   return defModel::data(index, role);
 }
 
-
+QVariant peopleTable::headerData(int section, Qt::Orientation orientation, int role) const{
+    if (role != Qt::DisplayRole)
+        return QVariant();
+    if (orientation == Qt::Vertical)
+        return QVariant(section + 1);
+    else
+        switch (section) {
+            case 0:
+                return QVariant("Фамилия");
+            case 1:
+                return QVariant("Имя");
+            case 2:
+                return QVariant("Отчество");
+}
+    return QSqlQueryModel::headerData(section,orientation, role);
+}
