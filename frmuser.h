@@ -15,7 +15,7 @@ class frmUser : public QWidget
     
 public:
     explicit frmUser(QWidget *parent = 0);
-    void Init(int type_rec,int IDCurrenUser = 0);
+    void Init(int type_rec,int IDCurrenUser = 0, QObject *prnt = 0);
     ~frmUser();
     
 private slots:
@@ -25,6 +25,7 @@ private:
     Ui::frmUser *ui;
     int TypeRecord;
     int IDCurrenUser_;
+    QObject *parent;
 };
 
 #endif // FRMUSER_H

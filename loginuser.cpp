@@ -34,7 +34,6 @@ bool LoginUser::Login(){
     sql.bindValue(":user",ui->userName->itemData(ui->userName->currentIndex()).toString());
     sql.exec();
     sql.next();
-    qDebug() << hash(ui->password->text());
     if (sql.value(0) == hash(ui->password->text()))
         return true;
     else

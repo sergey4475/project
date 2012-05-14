@@ -1,4 +1,5 @@
 #include "frmuser.h"
+#include "arm_admin.h"
 #include "ui_frmuser.h"
 
 frmUser::frmUser(QWidget *parent) :
@@ -10,10 +11,17 @@ frmUser::frmUser(QWidget *parent) :
 
 frmUser::~frmUser()
 {
+    QObject *prnt = parent;
+    arm_admin *myClass = qobject_cast<arm_admin*>(prnt);
+    if (myClass)
+          myClass->init_tab();
+      else
+          qDebug() << "Error parent not MyClass";
     delete ui;
 }
 
-void frmUser::Init(int type_rec,int IDCurrenUser){
+void frmUser::Init(int type_rec,int IDCurrenUser,QObject *prnt){
+    parent = prnt;
     TypeRecord      = type_rec;
     IDCurrenUser_   =IDCurrenUser;
 
@@ -43,7 +51,8 @@ void frmUser::Init(int type_rec,int IDCurrenUser){
             ui->UserName->setText(sql.value(0).toString());
             ui->RealUserName->setText(sql.value(1).toString());
             ui->Blocked->setChecked(sql.value(2).toBool());
-            ui->UserRole->setCurrentIndex(sql.value(3).toInt());
+            //ui->UserRole->setCurrentIndex(sql.value(3).toInt());
+            ui->UserRole->setCurrentIndex(ui->UserRole->findData(sql.value(3).toInt()));
         }
     }
 }
@@ -79,4 +88,11 @@ void frmUser::on_butApply_clicked()
         sql.exec();
         close();
     }
+    QObject *prnt = parent;
+    arm_admin *myClass = qobject_cast<arm_admin*>(prnt);
+    if (myClass)
+          myClass->init_tab();
+      else
+          qDebug() << "Error parent not MyClass";
+
 }

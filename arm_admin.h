@@ -30,8 +30,6 @@ private slots:
 
     void on_add_user_clicked();
 
-    void on_save_user();
-
     void on_edit_user_clicked();
 
     void on_table_users_activated(const QModelIndex &index);

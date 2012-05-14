@@ -38,13 +38,13 @@ QVariant peopleTable::headerData(int section, Qt::Orientation orientation, int r
     if (orientation == Qt::Vertical)
         return QVariant(section + 1);
     else
-        switch (section) {
-            case 0:
-                return QVariant("Фамилия");
-            case 1:
-                return QVariant("Имя");
-            case 2:
-                return QVariant("Отчество");
-}
+//        switch (section) {
+//            case 0:
+//                return QVariant("Фамилия");
+//            case 1:
+//                return QVariant("Имя");
+//            case 2:
+//                return QVariant("Отчество");
+//}
     return QSqlQueryModel::headerData(section,orientation, role);
 }

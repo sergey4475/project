@@ -1,6 +1,7 @@
 #include "global_module.h"
 
 void ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QString g_password, QString DriverBD, int g_connect_port){
+    if (!db.open())
     db = QSqlDatabase::addDatabase(DriverBD);
     db.close();
     db.setHostName(g_hostname);
@@ -12,7 +13,6 @@ void ConnectDB(QString g_hostname, QString g_dataBaseName, QString UserName, QSt
         QMessageBox::critical(0,"Ошибка подключения",db.lastError().text(),QMessageBox::Ok);
         db.close();
     }
-//   return db;
 }
 
 QString hash(QString strParam){

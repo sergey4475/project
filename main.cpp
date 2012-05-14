@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
     sql.prepare("SELECT UserName, RealUserName "
                 "FROM sys_users");
     sql.exec();
-    qDebug() << sql.lastError();
     if (!sql.next()){
         QString script;
 

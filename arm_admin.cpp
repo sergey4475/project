@@ -3,7 +3,7 @@
 #include "table_models.h"
 
 #define t_GENERAL 0
-#define t_CLIENTS 1
+#define t_WORKER 1
 
 #define t_ADMIN 6
 
@@ -35,12 +35,15 @@ void arm_admin::init(){
 }
 
 void arm_admin::init_tab(){
-    if (ui->Tab->currentIndex()==1){
+    if (ui->Tab->currentIndex() == t_WORKER){
         QSqlQuery query;
         query.exec("SELECT FName, IName, OName, qualification.name, IsAdministrator, worker.Deleted "
                    "FROM worker LEFT JOIN qualification ON worker.IDqualification = qualification.id");
         peopleTable *sotrModel = new peopleTable;
         sotrModel->setQuery(query);
+        sotrModel->setHeaderData(0,Qt::Horizontal,QObject::tr("Фамилия"));
+        sotrModel->setHeaderData(1,Qt::Horizontal,QObject::tr("Имя"));
+        sotrModel->setHeaderData(2,Qt::Horizontal,QObject::tr("Отчество"));
         sotrModel->setHeaderData(4,Qt::Horizontal,QObject::tr("Квалификация"));
         ui->tWorker->setModel(sotrModel);
         ui->tWorker->hideColumn(3);
@@ -49,7 +52,7 @@ void arm_admin::init_tab(){
     }
 
     //Вкладка администрирование
-    if (ui->Tab->currentIndex()==6){
+    if (ui->Tab->currentIndex() == t_ADMIN){
         ui->DriversDB->clear();
         QSqlDatabase db_;
         int count = db_.drivers().count();
@@ -67,13 +70,14 @@ void arm_admin::init_tab(){
         ui->DriversDB->setCurrentIndex(ui->DriversDB->findText(g_driverName));
 
         QSqlQuery query;
-        query.exec("SELECT ID, UserName, RealUserName, Blocked, Deleted "
+        query.exec("SELECT UserName, RealUserName, ID, Blocked, Deleted "
                    " FROM sys_users");
         peopleTable *userTab = new peopleTable;
         userTab->setQuery(query);
-        userTab->setHeaderData(1,Qt::Horizontal,QObject::tr("Имя пользователя"));
-        userTab->setHeaderData(2,Qt::Horizontal,QObject::tr("Полное имя"));
+        userTab->setHeaderData(0,Qt::Horizontal,QObject::tr("Имя пользователя"));
+        userTab->setHeaderData(1,Qt::Horizontal,QObject::tr("Полное имя"));
         ui->table_users->setModel(userTab);
+        ui->table_users->hideColumn(2);
         ui->table_users->hideColumn(3);
         ui->table_users->hideColumn(4);
 
@@ -127,32 +131,23 @@ void arm_admin::on_save_button_clicked()
 
 void arm_admin::on_add_user_clicked()
 {
-    frmUser *fUsers = new frmUser;
-    fUsers->Init(USER_ADD,0);
+    frmUser *fUsers = new frmUser();
+    fUsers->Init(USER_ADD,0,this);
     fUsers->show();
-}
-
-void arm_admin::on_save_user(){
-    qDebug() << 11;
 }
 
 void arm_admin::on_edit_user_clicked()
 {
-    QModelIndex ID = ui->table_users->model()->index(ui->table_users->currentIndex().row(),0);
+    QModelIndex ID = ui->table_users->model()->index(ui->table_users->currentIndex().row(),2);
     int IDClients = ID.data().toInt();
 
-    frmUser *fUsers = new frmUser;
-    fUsers->Init(USER_EDIT,IDClients);
+    frmUser *fUsers = new frmUser();
+    fUsers->Init(USER_EDIT,IDClients,this);
     fUsers->show();
 
 }
 
 void arm_admin::on_table_users_activated(const QModelIndex &index)
 {
-    QModelIndex ID = ui->table_users->model()->index(index.row(),0);
-    int IDClients = ID.data().toInt();
-
-    frmUser *fUsers = new frmUser;
-    fUsers->Init(USER_EDIT,IDClients);
-    fUsers->show();
+    on_edit_user_clicked();
 }
