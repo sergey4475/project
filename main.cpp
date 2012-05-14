@@ -1,6 +1,7 @@
 #include <QtGui/QApplication>
 #include "mainform.h"
 #include "loginuser.h"
+#include "sqlprocessor.h"
 #include <QTextCodec>
 
 int main(int argc, char *argv[])
@@ -27,16 +28,18 @@ int main(int argc, char *argv[])
     sql.exec();
     qDebug() << sql.lastError();
     if (!sql.next()){
-        QFile file;
-        if (g_driverName == "QSQLITE")
-            file.setFileName(":/res/scripts/sqlite.sql");
-        else if (g_driverName == "QMYSQL")
-            file.setFileName(":/res/scripts/mysql.sql");
+        QString script;
 
-        file.open(QFile::ReadOnly);
-        QString Sql_script = file.readAll();
-        QSqlQuery sql(Sql_script,db);
-        qDebug() << sql.lastError();
+        if (g_driverName == "QSQLITE")
+            script = ":/res/scripts/sqlite.sql";
+        else if (g_driverName == "QMYSQL")
+            script = ":/res/scripts/mysql.sql";
+
+        SqlProcessor *CreateDB = new SqlProcessor("c:/sql_log.log");
+        CreateDB->setDb(db);
+        CreateDB->setSqlScript(script);
+        CreateDB->run();
+
     }
 
 

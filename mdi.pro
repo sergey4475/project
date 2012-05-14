@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     loginuser.cpp \
     global_module.cpp \
     table_models.cpp \
-    frmuser.cpp
+    frmuser.cpp \
+    sqlprocessor.cpp
 
 HEADERS  += mainform.h \
     frmlistspr.h \
@@ -26,7 +27,8 @@ HEADERS  += mainform.h \
     loginuser.h \
     global_module.h \
     table_models.h \
-    frmuser.h
+    frmuser.h \
+    sqlprocessor.h
 
 FORMS    += mainform.ui \
     frmlistspr.ui \

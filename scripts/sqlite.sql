@@ -36,13 +36,8 @@ CREATE TABLE `sys_uinsobjects` (
   `UIN` int(11) NOT NULL,
   PRIMARY KEY (`NameObject`,`UIN`)
 );
---
--- Table structure for table `sys_usergroup`
---
 
 DROP TABLE IF EXISTS `sys_usergroup`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_usergroup` (
   `ID` AUTOINC,
   `GroupName` varchar(45) DEFAULT NULL,
@@ -122,13 +117,8 @@ CREATE TABLE `sys_uinsobjects` (
   `UIN` int(11) NOT NULL,
   PRIMARY KEY (`NameObject`,`UIN`)
 );
---
--- Table structure for table `sys_usergroup`
---
 
 DROP TABLE IF EXISTS `sys_usergroup`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_usergroup` (
   `ID` AUTOINC,
   `GroupName` varchar(45) DEFAULT NULL,
@@ -167,27 +157,20 @@ CREATE TABLE `sys_users` (
   PRIMARY KEY (`ID`)
 );
 
-/*LOCK TABLES `qualification` WRITE;*/
-INSERT INTO `qualification` VALUES (1,'Администратор',0),(2,'Мастер-универсал',0),(3,'Бухгалтер',0),(4,'Мастер',0),(5,'Кладовщик',0);
-/*UNLOCK TABLES;*/
+INSERT INTO `qualification` VALUES (1,'Администратор',0);
+INSERT INTO `qualification` VALUES (2,'Мастер-универсал',0);
+INSERT INTO `qualification` VALUES (3,'Бухгалтер',0);
+INSERT INTO `qualification` VALUES (4,'Мастер',0);
+INSERT INTO `qualification` VALUES (5,'Кладовщик',0);
 
-/*LOCK TABLES `sys_uinsobjects` WRITE;*/
-INSERT INTO `sys_uinsobjects` VALUES ('admins',100),('sys_users',1);
-/*UNLOCK TABLES;*/
-
-/*LOCK TABLES `sys_usergroup` WRITE;*/
+INSERT INTO `sys_uinsobjects` VALUES ('admins',100);
+INSERT INTO `sys_uinsobjects` VALUES ('sys_users',1);
 INSERT INTO `sys_usergroup` VALUES (1,'Администраторы',0,0);
-/*UNLOCK TABLES;*/
-
-/*LOCK TABLES `sys_userright` WRITE;*/
-INSERT INTO `sys_userright` VALUES (1,1,1,0,111),(1,2,100,0,1);
-/*UNLOCK TABLES;*/
-
-/*LOCK TABLES `sys_usersrole` WRITE;*/
-INSERT INTO `sys_usersrole` VALUES ('admin','Администратор',1),('kassir','Кассир',2),('operator','Оператор',3),('user','Пользователь',4);
-/*UNLOCK TABLES;*/
-
-/*LOCK TABLES `sys_users` WRITE;*/
-INSERT INTO `sys_users` VALUES (1,'admin','d033e22ae348aeb5660fc2140aec35850c4da997','Администратор',0,0,1),(2,'user','da39a3ee5e6b4b0d3255bfef95601890afd80709','Пользователь',0,0,4);
-/*UNLOCK TABLES;*/
-
+INSERT INTO `sys_userright` VALUES (1,1,1,0,111);
+INSERT INTO `sys_userright` VALUES (1,2,100,0,1);
+INSERT INTO `sys_usersrole` VALUES ('admin','Администратор',1);
+INSERT INTO `sys_usersrole` VALUES ('kassir','Кассир',2);
+INSERT INTO `sys_usersrole` VALUES ('operator','Оператор',3);
+INSERT INTO `sys_usersrole` VALUES ('user','Пользователь',4);
+INSERT INTO `sys_users` VALUES (1,'admin','da39a3ee5e6b4b0d3255bfef95601890afd80709','Администратор',0,0,1);
+INSERT INTO `sys_users` VALUES (2,'user','da39a3ee5e6b4b0d3255bfef95601890afd80709','Пользователь',0,0,4);
