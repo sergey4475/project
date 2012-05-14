@@ -1,7 +1,4 @@
-﻿CREATE DATABASE `profi`;
-USE `profi`;
-
-DROP TABLE IF EXISTS `sys_usergrp`;
+﻿DROP TABLE IF EXISTS `sys_usergrp`;
 CREATE TABLE `sys_usergrp` (
   `ID_User` int(11) NOT NULL,
   `ID_Group` int(11) NOT NULL
