@@ -25,7 +25,9 @@
         <file>icons/UserSecure24.png</file>
         <file>icons/UserSecure32.png</file>
     </qresource>
-    <qresource prefix="/">
+    <qresource prefix="/res">
         <file>styles/default.qss</file>
+        <file>scripts/mysql.sql</file>
+        <file>scripts/sqlite.sql</file>
     </qresource>
 </RCC>

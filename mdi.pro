@@ -34,10 +34,12 @@ FORMS    += mainform.ui \
     loginuser.ui \
     frmuser.ui
 
-#DESTDIR = ../bin
+DESTDIR = ../bin
 
 RESOURCES += \
-    icons.qrc
+    res.qrc
 
 OTHER_FILES += \
-    styles/default.qss
+    styles/default.qss \
+    scripts/sqlite.sql \
+    scripts/mysql.sql
