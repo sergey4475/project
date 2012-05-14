@@ -6,6 +6,24 @@
         <file>icons/Enable Convex24.png</file>
         <file>icons/ComboDown.ico</file>
         <file>icons/ComboUp.ico</file>
+        <file>icons/User16.png</file>
+        <file>icons/User24.png</file>
+        <file>icons/User48.png</file>
+        <file>icons/UserAdd16.png</file>
+        <file>icons/UserAdd24.png</file>
+        <file>icons/UserAdd32.png</file>
+        <file>icons/UserConfigure16.png</file>
+        <file>icons/UserConfigure24.png</file>
+        <file>icons/UserConfigure32.png</file>
+        <file>icons/UserDelete16.png</file>
+        <file>icons/UserDelete24.png</file>
+        <file>icons/UserDelete32.png</file>
+        <file>icons/UserInfo16.png</file>
+        <file>icons/UserInfo24.png</file>
+        <file>icons/UserInfo32.png</file>
+        <file>icons/UserSecure16.png</file>
+        <file>icons/UserSecure24.png</file>
+        <file>icons/UserSecure32.png</file>
     </qresource>
     <qresource prefix="/">
         <file>styles/default.qss</file>
