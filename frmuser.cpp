@@ -9,17 +9,23 @@ frmUser::frmUser(QWidget *parent) :
     ui->setupUi(this);
 }
 
-frmUser::~frmUser()
-{
+void updateParent(QObject *parent){
     QObject *prnt = parent;
     arm_admin *myClass = qobject_cast<arm_admin*>(prnt);
     if (myClass)
           myClass->init_tab();
       else
           qDebug() << "Error parent not MyClass";
+
+}
+
+frmUser::~frmUser()
+{
+    updateParent(parent);
     delete ui;
 }
 
+// ------------------ Инициализация формы ----------------
 void frmUser::Init(int type_rec,int IDCurrenUser,QObject *prnt){
     parent = prnt;
     TypeRecord      = type_rec;
@@ -59,7 +65,7 @@ void frmUser::Init(int type_rec,int IDCurrenUser,QObject *prnt){
 
 void frmUser::on_butApply_clicked()
 {
-    QSqlQuery sql;
+    QSqlQuery sql(db);
     // -------------------------- Добавление нового пользователя ---------------------------
     if (TypeRecord == USER_ADD){
         sql.exec("SELECT UserName FROM sys_users WHERE UserName="+ui->UserName->text());
@@ -86,13 +92,8 @@ void frmUser::on_butApply_clicked()
         sql.bindValue(":Blocked",ui->Blocked->checkState());
         sql.bindValue("IDCurrenUser",IDCurrenUser_);
         sql.exec();
+        qDebug() << sql.lastError();
         close();
     }
-    QObject *prnt = parent;
-    arm_admin *myClass = qobject_cast<arm_admin*>(prnt);
-    if (myClass)
-          myClass->init_tab();
-      else
-          qDebug() << "Error parent not MyClass";
-
+    updateParent(parent);
 }

@@ -6,6 +6,8 @@
 
 QT       += core gui sql
 
+CONFIG += uitools
+
 TARGET = mdi
 TEMPLATE = app
 

@@ -712,7 +712,7 @@
              <x>12</x>
              <y>48</y>
              <width>357</width>
-             <height>133</height>
+             <height>251</height>
             </rect>
            </property>
            <property name="verticalScrollBarPolicy">
@@ -759,7 +759,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="icons.qrc">
+                <iconset resource="res.qrc">
                  <normaloff>:/image/icons/UserAdd32.png</normaloff>:/image/icons/UserAdd32.png</iconset>
                </property>
                <property name="iconSize">
@@ -779,7 +779,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="icons.qrc">
+                <iconset resource="res.qrc">
                  <normaloff>:/image/icons/UserConfigure32.png</normaloff>:/image/icons/UserConfigure32.png</iconset>
                </property>
                <property name="iconSize">
@@ -799,7 +799,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="icons.qrc">
+                <iconset resource="res.qrc">
                  <normaloff>:/image/icons/UserSecure32.png</normaloff>:/image/icons/UserSecure32.png</iconset>
                </property>
                <property name="iconSize">
@@ -819,7 +819,7 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="icons.qrc">
+                <iconset resource="res.qrc">
                  <normaloff>:/image/icons/UserDelete32.png</normaloff>:/image/icons/UserDelete32.png</iconset>
                </property>
                <property name="iconSize">
@@ -852,7 +852,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

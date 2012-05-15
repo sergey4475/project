@@ -23,6 +23,7 @@ arm_admin::~arm_admin()
     delete ui;
 }
 
+// ------------------ Инициализация формы ----------------
 void arm_admin::init(){
     QSqlTableModel *table = new QSqlTableModel;
     table->insertColumn(0);
@@ -34,7 +35,9 @@ void arm_admin::init(){
     init_tab();
 }
 
+// ------------------ Инициализация вкладок --------------
 void arm_admin::init_tab(){
+    //Вкладка сотрудники
     if (ui->Tab->currentIndex() == t_WORKER){
         QSqlQuery query;
         query.exec("SELECT FName, IName, OName, qualification.name, IsAdministrator, worker.Deleted "
@@ -91,6 +94,9 @@ void arm_admin::on_Tab_currentChanged(int index)
     init_tab();
 }
 
+//******************************** АДМИНИСТРИРОВАНИЕ ***************************
+// ============================= Настройка баз данных ==========================
+// проверка соединения
 void arm_admin::on_testBUt_clicked()
 {
     QSqlDatabase db_ = QSqlDatabase::addDatabase(ui->DriversDB->currentText());
@@ -108,7 +114,7 @@ void arm_admin::on_testBUt_clicked()
     }
     db_.~QSqlDatabase();
 }
-
+// сохранение настроек
 void arm_admin::on_save_button_clicked()
 {
     QSettings settings("config.ini",QSettings::IniFormat);
@@ -128,14 +134,17 @@ void arm_admin::on_save_button_clicked()
 
     ConnectDB(g_hostname, g_dataBase, g_login, g_password, g_driverName,g_connect_port);
 }
+// ======================================================================================
 
+// ============================= Настройка пользователей ==========================
+// кнопка добавить пользователя
 void arm_admin::on_add_user_clicked()
 {
     frmUser *fUsers = new frmUser();
     fUsers->Init(USER_ADD,0,this);
     fUsers->show();
 }
-
+// кнопка редактировать пользователя
 void arm_admin::on_edit_user_clicked()
 {
     QModelIndex ID = ui->table_users->model()->index(ui->table_users->currentIndex().row(),2);
